@@ -2,6 +2,25 @@ const catchAsyncError = require('../middlewares/catchAsyncError');
 const Order = require('../models/orderModel');
 const Product = require('../models/productModel');
 const ErrorHandler = require('../utils/errorHandler');
+
+
+// exports.createOrder = async (req, res) => {
+//     try {
+//         const { user, items, totalPrice } = req.body;
+//         const order = await Order.create({
+//             user,
+//             items,
+//             totalPrice,
+//         });
+//         res.status(201).json({ success: true, order });
+//     } catch (error) {
+//         res.status(500).json({ success: false, message: error.message });
+//     }
+// };
+
+
+
+
 //Create New Order - api/v1/order/new
 exports.newOrder =  catchAsyncError( async (req, res, next) => {
     const {

@@ -1,11 +1,13 @@
 import { Fragment } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { decreaseCartItemQty, increaseCartItemQty,removeItemFromCart } from '../../slices/cartSlice';
-//import { toast } from 'react-toastify';
+import { decreaseCartItemQty, increaseCartItemQty,removeItemFromCart} from '../../slices/cartSlice';
+import { toast } from 'react-toastify';
 
 export default function Cart() {
     const {items } = useSelector(state => state.cartState)
+    const { isAuthenticated, user } = useSelector(state => state.authState);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -22,12 +24,39 @@ export default function Cart() {
 
     const checkoutHandler = () =>{
         //navigate('/login?redirect=shipping')
-        //toast.success("order successfully")
-        const message='i want to buy things '
-        const phoneNumber = '916374389691'; // Replace with your phone number
+        // let message = 'Hi I want to order some products :\nOrder Details:\n';
+        let message = `Hi I am ${user.name}, I want to order some products:\nOrder Details:\n`;
+        items.forEach((item, index) => {
+            const { name, quantity, price } = item;
+            message += `${index + 1}. ${name}: ${quantity} x ₹${price} = ₹${quantity * price}\n`;
+        });
+        
+        // items.forEach((item, index) => {
+            //     const { name, quantity } = item;
+            //     message += `${index + 1}. ${name}: ${quantity}\n`;
+            // });
+            // var price={items.reduce((acc, item)=>(acc + item.quantity * item.price), 0)}
+            // items.forEach((item,index)=>{
+                
+                //     price+=item.price
+                // })
+        const totalPrice = items.reduce((acc, item) => acc + item.quantity * item.price, 0);
+        message += `\nTotal price: ₹${totalPrice}\n`;
+        console.log(items.length)
+        console.log(items)
+        console.log(message)
+        const phoneNumber = '916374389691';
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(url);
+        //dispatch(createOrder({ user: user._id, items, totalPrice }));
+        
+        //toast.success("order successfully "+items.length)
+        // const message='i want to buy things '
+        // const phoneNumber = '916374389691'; // Replace with your phone number
         // const encodedMessage = encodeURIComponent(message);
-         const url = `https://wa.me/${phoneNumber}?text=${message}`;
-         window.location.href = url;
+        //  const url = `https://wa.me/${phoneNumber}?text=${message}`;
+        //  window.location.href = url;
     }
 
 
