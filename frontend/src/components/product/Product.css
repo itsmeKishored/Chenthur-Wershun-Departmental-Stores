@@ -1,0 +1,113 @@
+/* Container for each product card */
+.product-col {
+    padding: 15px;
+}
+
+.product-col-lg-3 {
+    width: 25%;
+}
+
+.product-col-lg-4 {
+    width: 33.3333%;
+}
+
+.product-col-lg-6 {
+    width: 50%;
+}
+
+/* Card styling */
+.card {
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/* Image styling */
+.card-img-top {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* Card body styling */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+/* Title */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: #333;
+}
+
+.card-title a:hover {
+    color: #007bff;
+}
+
+/* Ratings */
+.ratings {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.rating-outer {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rating-inner {
+    height: 100%;
+    background-color: gold;
+    width: 0; /* Dynamically set */
+}
+
+.no-of-reviews {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Price */
+.card-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* View Details button */
+.view-btn {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}

@@ -21,7 +21,7 @@ export default function Header () {
         <div className="col-12 col-md-3">
           <div className="navbar-brand">
             <Link to="/">
-              <img width="200px" height='100px' alt='chenthur wershun Logo' src="/images/logo.png" />
+              <img width="200px" height='100px' alt='chenthur wershun Logo' src="/images/logo1.png" />
             </Link>
             </div>
         </div>
@@ -58,3 +58,93 @@ export default function Header () {
     </nav>
     )
 }
+// import React from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+// import Search from './Search';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { logout } from '../../actions/userActions';
+// import './Header.css';  // Import your custom CSS file
+
+// export default function Header() {
+//   const { isAuthenticated, user } = useSelector(state => state.authState);
+//   const { items: cartItems } = useSelector(state => state.cartState);
+//   const dispatch = useDispatch();
+//   const navigate = useNavigate();
+
+//   const logoutHandler = () => {
+//     dispatch(logout());
+//   };
+
+//   return (
+//     <nav className="navbar">
+//       <div className="navbar-section">
+//         <div className="navbar-brand">
+//           <Link to="/">
+//             <img
+//               className="navbar-logo"
+//               src="/images/logo1.png"
+//               alt="chenthur wershun Logo"
+//             />
+//           </Link>
+//         </div>
+//       </div>
+
+//       <div className="navbar-section">
+//         <Search />
+//       </div>
+
+//       <div className="navbar-section text-center">
+//         {isAuthenticated ? (
+//           <div className="dropdown">
+//             <button className="dropdown-toggle">
+//               <figure className="avatar avatar-nav">
+//                 <img
+//                   className="avatar-img"
+//                   src={user.avatar ?? './images/default_avatar.png'}
+//                   alt="User Avatar"
+//                 />
+//               </figure>
+//               <span>{user.name}</span>
+//             </button>
+//             <div className="dropdown-menu">
+//               {user.role === 'admin' && (
+//                 <button
+//                   onClick={() => navigate('/admin/dashboard')}
+//                   className="dropdown-item"
+//                 >
+//                   Dashboard
+//                 </button>
+//               )}
+//               <button
+//                 onClick={() => navigate('/myprofile')}
+//                 className="dropdown-item"
+//               >
+//                 Profile
+//               </button>
+//               <button
+//                 onClick={() => navigate('/orders')}
+//                 className="dropdown-item"
+//               >
+//                 Orders
+//               </button>
+//               <button
+//                 onClick={logoutHandler}
+//                 className="dropdown-item text-danger"
+//               >
+//                 Logout
+//               </button>
+//             </div>
+//           </div>
+//         ) : (
+//           <Link to="/login" className="btn">
+//             Login
+//           </Link>
+//         )}
+//         <Link to="/cart" className="cart-link">
+//           <span id="cart">Cart</span>
+//           <span id="cart_count">{cartItems.length}</span>
+//         </Link>
+//       </div>
+//     </nav>
+//   );
+// }
