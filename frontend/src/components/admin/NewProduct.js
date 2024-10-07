@@ -23,9 +23,7 @@ export  default function NewProduct () {
                 'Food',
                 'Beauty/Health',
                 'Groceries',
-                'Sports',
-                'Outdoor',
-                'Home'
+                
     ];
 
     const navigate = useNavigate();
@@ -39,7 +37,7 @@ export  default function NewProduct () {
             const reader = new FileReader();
 
             reader.onload = () => {
-                if(reader.readyState == 2 ) {
+                if(reader.readyState === 2 ) {
                     setImagesPreview(oldArray => [...oldArray, reader.result])
                     setImages(oldArray => [...oldArray, file])
                 }

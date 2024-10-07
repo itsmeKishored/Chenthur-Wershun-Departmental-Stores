@@ -1,6 +1,6 @@
 import {useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import './profile.css'
 export default function Profile () {
     const { user }  = useSelector(state => state.authState);
 

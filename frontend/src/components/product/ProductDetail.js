@@ -10,6 +10,7 @@ import {clearReviewSubmitted, clearError, clearProduct} from '../../slices/produ
 import {Modal} from 'react-bootstrap';
 import { toast } from "react-toastify";
 import ProductReview from "./ProductReview";
+// import './ProductDetail.css';
 
 
 export default function ProductDetail () {

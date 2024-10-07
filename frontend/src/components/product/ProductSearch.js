@@ -27,9 +27,6 @@ export  default function ProductSearch(){
         'Food',
         'Groceries',
         'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
     ];
  
     const setCurrentPageNo = (pageNo) =>{
