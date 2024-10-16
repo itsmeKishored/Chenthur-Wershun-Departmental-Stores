@@ -1,0 +1,57 @@
+/* UserList.css */
+.user-list {
+    background-color: #f8f9fa; /* Light Background */
+    transition: background-color 0.3s ease;
+}
+
+.user-list h1 {
+    color: #343a40; /* Darker Color for Header */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap Blue */
+    border: none;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker Blue on Hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Bootstrap Red */
+    border: none;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker Red on Hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+.table {
+    transition: all 0.3s ease;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef; /* Light Gray for Odd Rows */
+}
+
+.table-striped tbody tr:hover {
+    background-color: #dee2e6; /* Slightly Darker Gray on Hover */
+}
+
+.table th, .table td {
+    text-align: center; /* Center align the text */
+    vertical-align: middle; /* Vertically align the text */
+}
+
+.table th {
+    background-color: #343a40; /* Dark Header Background */
+    color: white; /* White Text Color for Header */
+}
+
+.table td {
+    color: #495057; /* Darker Text Color for Table Cells */
+}

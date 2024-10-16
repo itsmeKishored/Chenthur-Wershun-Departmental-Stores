@@ -5,7 +5,7 @@ import MetaData from '../layouts/MetaData';
 import { toast } from 'react-toastify';
 
 
-import './Login.css';
+// import './Login.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
  export default function Login() {
     const [email, setEmail] = useState("")

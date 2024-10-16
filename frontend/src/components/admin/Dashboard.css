@@ -1,0 +1,60 @@
+/* Dashboard.css */
+.dashboard {
+    background-color: #f0f2f5; /* Light background */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.dashboard h1 {
+    color: #343a40; /* Darker color for heading */
+}
+
+.card {
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for scale and shadow */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Shadow effect on hover */
+}
+
+.total-amount-card {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+}
+
+.product-card {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+}
+
+.order-card {
+    background-color: #dc3545; /* Red background */
+    color: white; /* White text */
+}
+
+.user-card {
+    background-color: #17a2b8; /* Teal background */
+    color: white; /* White text */
+}
+
+.out-of-stock-card {
+    background-color: #ffc107; /* Yellow background */
+    color: white; /* White text */
+}
+
+.card-footer {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background for footer */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.card-footer:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker on hover */
+}
+
+.card-font-size {
+    font-size: 1.5rem; /* Larger font size for card content */
+}

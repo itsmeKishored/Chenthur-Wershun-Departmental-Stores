@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-// import './Product.css';
+import './Product.css';
 export default function Product ({product, col}) {
     return (
         <div className={`col-sm-12 col-md-6 col-lg-${col} my-3`}>
@@ -29,47 +29,3 @@ export default function Product ({product, col}) {
 }
 
 
-
-
-// import { Link } from 'react-router-dom';
-// import './Product.css'; // Assuming you'll place the CSS in a separate file
-
-// export default function Product({ product, col }) {
-//     return (
-//         <div className={`product-col product-col-lg-${col}`}>
-//             <div className="card">
-//                 {product.images.length > 0 && (
-//                     <img
-//                         className="card-img-top"
-//                         src={product.images[0].image}
-//                         alt={product.name}
-//                     />
-//                 )}
-//                 <div className="card-body">
-//                     <h5 className="card-title">
-//                         <Link to={`/product/${product._id}`}>
-//                             {product.name}
-//                         </Link>
-//                     </h5>
-//                     <div className="ratings">
-//                         <div className="rating-outer">
-//                             <div
-//                                 className="rating-inner"
-//                                 style={{
-//                                     width: `${(product.ratings / 5) * 100}%`,
-//                                 }}
-//                             ></div>
-//                         </div>
-//                         <span className="no-of-reviews">
-//                             ({product.numOfReviews} Reviews)
-//                         </span>
-//                     </div>
-//                     <p className="card-text">₹{product.price}</p>
-//                     <Link to={`/product/${product._id}`} className="view-btn">
-//                         View Details
-//                     </Link>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }

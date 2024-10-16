@@ -8,6 +8,7 @@ import Loader from '../layouts/Loader';
 import { MDBDataTable} from 'mdbreact';
 import {toast } from 'react-toastify'
 import Sidebar from "./Sidebar"
+import './UserList.css'; // Add this line to import your styles
 
 export default function UserList() {
     const { users = [], loading = true, error, isUserDeleted }  = useSelector(state => state.userState)

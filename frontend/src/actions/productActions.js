@@ -62,18 +62,26 @@ export const createReview = reviewData => async (dispatch) => {
     
 }
 
-export const getAdminProducts  =  async (dispatch) => {
+export const getAdminProducts = (filter = null) => async (dispatch) => {
+    try {
+        dispatch(adminProductsRequest()); // Dispatch request action to indicate loading
 
-    try {  
-        dispatch(adminProductsRequest()) 
-        const { data }  =  await axios.get(`/api/v1/admin/products`);
-        dispatch(adminProductsSuccess(data))
+        const { data } = await axios.get(`/api/v1/admin/products`); // Fetch all products from the backend
+        
+        let products = data.products;
+
+        // If the filter is set to 'out-of-stock', filter the products array
+        if (filter === 'out-of-stock') {
+            products = products.filter(product => product.stock === 0);
+        }
+
+        dispatch(adminProductsSuccess({ products })); // Dispatch success action with filtered products
+
     } catch (error) {
-        //handle error
-        dispatch(adminProductsFail(error.response.data.message))
+        // Handle error if the request fails
+        dispatch(adminProductsFail(error.response.data.message));
     }
-    
-}
+};
 
 export const createNewProduct  =  productData => async (dispatch) => {
 

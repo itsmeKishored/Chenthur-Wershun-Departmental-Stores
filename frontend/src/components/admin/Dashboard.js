@@ -4,13 +4,15 @@ import { useEffect } from "react";
 import { getAdminProducts } from "../../actions/productActions";
 import {getUsers} from '../../actions/userActions'
 import {adminOrders as adminOrdersAction} from '../../actions/orderActions'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import './Dashboard.css'; // Add this line to import your styles
 
 export default function Dashboard () {
     const { products = [] } = useSelector( state => state.productsState);
     const { adminOrders = [] } = useSelector( state => state.orderState);
     const { users = [] } = useSelector( state => state.userState);
     const dispatch = useDispatch();
+    const navigate = useNavigate(); // Using useNavigate to handle redirection
     let outOfStock = 0;
 
     if (products.length > 0) {
@@ -34,9 +36,11 @@ export default function Dashboard () {
        dispatch(getAdminProducts);
        dispatch(getUsers);
        dispatch(adminOrdersAction)
-    }, [])
+    }, [dispatch])
 
-
+    const showOutOfStock = () => {
+        navigate("/admin/products?filter=out-of-stock");
+    }
     return (
         <div className="row">
             <div className="col-12 col-md-2">
@@ -100,15 +104,23 @@ export default function Dashboard () {
                     </div>
 
 
-                    <div className="col-xl-3 col-sm-6 mb-3">
-                        <div className="card text-white bg-warning o-hidden h-100">
-                            <div className="card-body">
-                                <div className="text-center card-font-size">Out of Stock<br /> <b>{outOfStock}</b></div>
+                    <div className="col-xl-3 col-sm-6 mb-3" style={{ cursor: 'pointer' }}>
+                            <div className="card text-white bg-warning o-hidden h-100">
+                                <div className="card-body">
+                                    <div className="text-center card-font-size">Out of Stock<br /> <b>{outOfStock}</b></div>
+                                </div>
+                        <Link to="/admin/products?filter=out-of-stock" className="text-white">
+                                <div className="card-footer clearfix small z-1">
+                                    <span className="float-left">View Details</span>
+                                    <span className="float-right">
+                                        <i className="fa fa-angle-right"></i>
+                                    </span>
+                                </div>
+                        </Link>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
